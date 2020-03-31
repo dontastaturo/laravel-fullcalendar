@@ -5,7 +5,6 @@
 <script>
     /* jQuery(document).ready(function () {
         new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
-    }); */
-    var fullcalendar_calendars = [];
+    }); */    
     fullcalendar_calendars.push(new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}));
 </script>
