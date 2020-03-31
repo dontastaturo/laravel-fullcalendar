@@ -51,7 +51,7 @@ class Fullcalendar
      */
     private function calendar()
     {
-        return "<div id='" . $this->getId() . "'></div>";
+        return "<div id='" . $this->getId() . "' class='calendar'></div>";
     }
 
     /**
