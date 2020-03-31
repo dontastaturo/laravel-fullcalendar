@@ -4,6 +4,7 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
-        new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();        
+        var calendar_{{$id}} = new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
+        console.log('ready');
     });
 </script>
