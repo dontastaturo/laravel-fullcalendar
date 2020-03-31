@@ -95,8 +95,8 @@ class Fullcalendar
             $options['events'] = $this->events;
         }
 
-        if (!isset($options['eventsources'])) {
-            $options['eventsources'] = $this->eventSources;
+        if (!isset($options['eventSources'])) {
+            $options['eventSources'] = $this->eventSources;
         }
 
         // Encode the JSON properly to format the callbacks
