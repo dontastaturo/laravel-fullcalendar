@@ -7,5 +7,5 @@
         new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
     }); */
     var fullcalendar_calendars = [];
-    fullcalendar_calendars['{{$id}}'] = new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
+    fullcalendar_calendars[] = new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
 </script>
