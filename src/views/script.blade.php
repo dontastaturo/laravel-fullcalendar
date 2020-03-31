@@ -2,8 +2,10 @@
 @include('fullcalendar::files')
 @endif
 
-<script type="text/javascript">
-    jQuery(document).ready(function () {
+<script>
+    /* jQuery(document).ready(function () {
         new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
-    });
+    }); */
+    var fullcalendar_calendars = [];
+    fullcalendar_calendars[{{$id}}] = new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
 </script>
