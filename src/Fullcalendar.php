@@ -13,6 +13,8 @@ class Fullcalendar
     /** @var array */
     protected $events = [];
     /** @var array */
+    protected $eventSources = [];
+    /** @var array */
     protected $defaultOptions = [
         'header'   => [
             'left'   => 'prev,next today',
@@ -93,6 +95,10 @@ class Fullcalendar
             $options['events'] = $this->events;
         }
 
+        if (!isset($options['eventsources'])) {
+            $options['eventsources'] = $this->eventSources;
+        }
+
         // Encode the JSON properly to format the callbacks
         return JsonEncoder::encode($options);
     }
@@ -130,5 +136,21 @@ class Fullcalendar
     public function setEvents($events)
     {
         $this->events = $events;
+    }
+
+    /**
+     * @return array
+     */
+    public function getEventSources()
+    {
+        return $this->eventSources;
+    }
+
+    /**
+     * @param array $eventsources
+     */
+    public function setEventSources(array $eventsources)
+    {
+        $this->eventSources = $eventsources;
     }
 }
