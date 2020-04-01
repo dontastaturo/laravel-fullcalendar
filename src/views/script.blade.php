@@ -4,7 +4,11 @@
 
 <script>
     jQuery(document).ready(function () {
-        new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}).render();
+        var calEl = document.getElementById('{{$id}}')
+        var calendar = new FullCalendar.Calendar(calEl), {!! $options !!}).render();
+        calEl.calendar = calendar;
+        if(calendars) {
+            calendars['{{$id}}'] = calendar;
+        }
     });    
-    // fullcalendar_calendars.push(new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!}));
 </script>
