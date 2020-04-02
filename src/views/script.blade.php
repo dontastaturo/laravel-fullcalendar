@@ -8,6 +8,6 @@
         if(calendars) {
             calendars['{{$id}}'] = calendar;
         }
-        calendar.render();
+        // calendar.render();
     });    
 </script>
