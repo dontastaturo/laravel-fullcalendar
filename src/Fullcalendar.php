@@ -51,7 +51,13 @@ class Fullcalendar
      */
     private function calendar()
     {
-        return "<div id='" . $this->getId() . "' class='calendar'></div>";
+        return '<div id=" . $this->getId() ." class="calendar">
+            <div class="spinner-loading">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>';
     }
 
     /**
