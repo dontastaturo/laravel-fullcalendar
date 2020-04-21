@@ -5,7 +5,7 @@
 <script>
     jQuery(document).ready(function () {
         var calendar = new FullCalendar.Calendar(document.getElementById('{{$id}}'), {!! $options !!});
-        if(calendars || false) {
+        if(typeof calendars !== 'undefined') {
             calendars['{{$id}}'] = calendar;
         }
         // calendar.render();
