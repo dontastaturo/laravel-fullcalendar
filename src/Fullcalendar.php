@@ -26,6 +26,9 @@ class Fullcalendar
     /** @var array */
     protected $clientOptions = [];
 
+    protected $cssClasses = ['calendar'];
+    protected $clientCssClasses = [];
+
     /**
      * Renders the view that includes the script files
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -51,13 +54,20 @@ class Fullcalendar
      */
     private function calendar()
     {
-        return '<div id="' . $this->getId() . '" class="calendar">
+        /* return '<div id="' . $this->getId() . '" class="calendar">
             <div class="spinner-loading">
                 <div class="spinner-border" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
             </div>
-        </div>';
+        </div>'; */
+        return view(
+            'fullcalendar::calendar',
+            [
+                'id' => $this->getId(),
+                'cssClasses' => $this->getCssClasses(),
+            ]
+        )->render();
     }
 
     /**
@@ -126,6 +136,16 @@ class Fullcalendar
     public function setOptions(array $options)
     {
         $this->clientOptions = $options;
+    }
+
+    public function getCssClasses()
+    {
+        return array_merge($this->cssClasses, $this->clientCssClasses);
+    }
+
+    public function setCssClasses(array $classes)
+    {
+        $this->clientCssClasses = $classes;
     }
 
     /**
